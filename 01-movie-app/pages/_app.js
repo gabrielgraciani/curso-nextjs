@@ -1,6 +1,7 @@
 import App from 'next/app';
 import Head from 'next/head';
 import Navbar from '../components/navbar';
+import Footer from '../components/footer';
 
 class MovieApp extends App{
 	render(){
@@ -22,6 +23,9 @@ class MovieApp extends App{
 				<div className="base-page">
 					<Component />
 				</div>
+
+				<Footer />
+
 				<style jsx>{`
 					.base-page {
 					  padding-top: 80px;

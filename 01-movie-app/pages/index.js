@@ -2,9 +2,7 @@ import React, {Component, useState, useEffect} from 'react'
 import SideMenu from '../components/sideMenu';
 import Carousel from '../components/carousel';
 import MovieList from '../components/movieList';
-import Footer from '../components/footer';
 import {getMovies} from '../actions';
-
 
 const Home = (props) => {
 
@@ -26,7 +24,6 @@ const Home = (props) => {
 						</div>
 					</div>
 				</div>
-				<Footer />
 
 			</div>
 		</div>
