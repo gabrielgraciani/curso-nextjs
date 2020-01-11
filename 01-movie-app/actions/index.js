@@ -29,13 +29,23 @@ const MOVIE_DATA = [
 ];
 
 export const getMovies = () => {
-
 	return new Promise((resolve, reject) => {
 		setTimeout(() => {
 			resolve(MOVIE_DATA);
 			reject('Cannot fetch data!');
 		}, 0);
 	})
-
-
 };
+
+export const getMovieById = (id) => {
+	return new Promise((resolve, reject) => {
+		/*const movieIndex = MOVIE_DATA.findIndex((movie) => {
+			return movie.id === id;
+		});*/
+		const movieIndex = MOVIE_DATA.findIndex(movie => movie.id === id);
+
+		const movie = MOVIE_DATA[movieIndex];
+
+		resolve(movie);
+	})
+}
