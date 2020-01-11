@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import Head from 'next/head';
 import Navbar from '../components/navbar';
 import SideMenu from '../components/sideMenu';
@@ -11,9 +11,15 @@ import {getMovies} from '../actions';
 const Home = () => {
 
 	const [movies, setMovies] = useState([]);
-	getMovies().then((movies) => {
-		setMovies(movies);
-	});
+	const [count, setCount] = useState(0);
+
+	useEffect(() => {
+		const fetchData = async () => {
+			const resMovies = await getMovies();
+			setMovies(resMovies);
+		};
+		fetchData();
+	}, [count]);
 
 	return(
 		<div>
@@ -29,6 +35,7 @@ const Home = () => {
 
 			<div className="home-page">
 				<div className="container">
+					<button onClick={() => setCount(count)}>Click me!</button>
 					<div className="row">
 
 						<div className="col-lg-3">
