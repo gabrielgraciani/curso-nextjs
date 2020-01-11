@@ -1,14 +1,23 @@
+import React, {Component} from 'react';
 
-const Modal = (props) => {
+class Modal extends Component{
+	constructor(props){
+		super(props);
 
-	let closeButton = null;
-	const submitModal = () => {
+		this.closeButton = null;
+	}
+
+	closeModal(){
+		this.closeButton.click();
+	}
+
+	submitModal = () => {
 		alert('submit');
-		closeButton.click();
+		this.closeModal();
 	};
-
-	return(
-		<>
+	render(){
+		return(
+			<>
 			<button type="button" className="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
 				Create Movie
 			</button>
@@ -23,26 +32,27 @@ const Modal = (props) => {
 							</button>
 						</div>
 						<div className="modal-body">
-							{props.children}
+							{this.props.children}
 						</div>
 						<div className="modal-footer">
 							<button
 								type="button"
 								className="btn btn-secondary"
 								data-dismiss="modal"
-								ref={element => closeButton = element}>Close</button>
-							{props.hasSubmit && (
+								ref={element => this.closeButton = element}>Close</button>
+							{this.props.hasSubmit && (
 								<button
 									type="button"
 									className="btn btn-primary"
-									onClick={submitModal}>Save changes</button>
+									onClick={this.submitModal}>Save changes</button>
 							)}
 						</div>
 					</div>
 				</div>
 			</div>
-		</>
-	)
+			</>
+		)
+	}
 };
 
 export default Modal;
