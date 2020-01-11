@@ -69,3 +69,11 @@ export const getCategories = () => {
 		reject('Cannot fetch data!');
 	});
 };
+
+export const createMovie = (movie) => {
+	return new Promise((resolve, reject) => {
+		MOVIE_DATA.push(movie);
+		resolve(MOVIE_DATA);
+		reject('Cannot fetch data!');
+	})
+};
