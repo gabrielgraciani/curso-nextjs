@@ -36,7 +36,8 @@ const Home = (props) => {
 		const movies = await getMovies();
 		const images = movies.map((movie) => ({
 			id: `image-${movie.id}`,
-			image: movie.image
+			url: movie.cover,
+			title: movie.name
 		}));
 
 		return {movies, images}
