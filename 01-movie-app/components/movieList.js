@@ -1,32 +1,11 @@
 import React, {Component} from 'react';
 
 class MovieList extends Component{
-	constructor(props){
-		super(props);
-
-		this.state = {
-			count: 0
-		}
-	}
-
-	increment = () => {
-		const {count} = this.state;
-		this.setState({count: count+ 1});
-	};
-
-	decrement = () => {
-		const {count} = this.state;
-		this.setState({count: count - 1});
-	};
-
 	render(){
 		return(
 			<>
 			<div>
-				<button className="btn btn-primary" onClick={this.increment}>Increment Number</button>
-				<button className="btn btn-primary" onClick={this.decrement}>Decrement Number</button>
-
-				<h1>{this.state.count}</h1>
+				<h1>{this.props.count}</h1>
 			</div>
 
 			<div className="col-lg-4 col-md-6 mb-4">
