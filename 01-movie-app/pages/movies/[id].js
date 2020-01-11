@@ -9,21 +9,26 @@ const Movie = (props) => {
 		<div className="container">
 			<div className="jumbotron">
 				<h1 className="display-4">{movie.name}</h1>
-				<p className="lead">asdasdasdsadasdasdsa</p>
+				<p className="lead">{movie.description}</p>
 				<hr className="my-4"/>
-				<p>dsadasdasdasdasd</p>
+				<p>{movie.genre}</p>
 				<a href="" className="btn btn-primary btn-lg" role="button">Learn more</a>
 			</div>
-			<p>
-				some description about the movie
+			<p className="desc-text">
+				{movie.longDescription}
 			</p>
+
+			<style jsx>{`
+				.desc-text{font-size:21px;}
+			`}
+			</style>
 		</div>
 	)
 };
 
-Movie.getInitialProps = async() => {
-	const movie = await getMovieById("2");
+Movie.getInitialProps = async({query}) => {
+	const movie = await getMovieById(query.id);
 	return {movie}
-}
+};
 
 export default Movie;
