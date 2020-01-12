@@ -43,7 +43,7 @@ app.prepare().then(() => {
 
 	server.delete('/api/v1/movies/:id', (req, res) => {
 		const {id} = req.params;
-		const movieIndex = moviesData.find(m => m.id === id);
+		const movieIndex = moviesData.findIndex(m => m.id === id);
 
 		moviesData.splice(movieIndex, 1);
 
