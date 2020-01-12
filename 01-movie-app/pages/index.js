@@ -16,7 +16,7 @@ const Home = (props) => {
 	const filterMovies = (movies) => {
 		if(filter === 'all'){
 			return movies;
-		}0
+		}
 		return movies.filter((movie) => {
 			return movie.genre && movie.genre.includes(filter)
 		})
