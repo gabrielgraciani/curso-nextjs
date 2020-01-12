@@ -7,6 +7,11 @@ import {getMovies, getCategories} from '../actions';
 const Home = (props) => {
 
 	const {images, categories, movies} = props;
+	const [filter, setFilter] = useState('');
+
+	const changeCategory = (category) => {
+		setFilter(category);
+	};
 
 	return (
 		<div>
@@ -17,10 +22,13 @@ const Home = (props) => {
 							<SideMenu
 								appName={"Movie DB"}
 								categories={categories}
+								changeCategory={changeCategory}
+								activeCategory={filter}
 							/>
 						</div>
 						<div className="col-lg-9">
 							<Carousel images={images} />
+							<h1>Displaying {filter} movies</h1>
 							<div className="row">
 								<MovieList movies={movies || []} />
 							</div>
