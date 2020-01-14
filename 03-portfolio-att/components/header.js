@@ -7,7 +7,7 @@ const Header = () => {
 		<div id="wrap_header">
 			<div className="indent">
 				<div className="logo">
-					<h2>GABRIEL THOMAZ GRACIANI</h2>
+					<h2 class="bold">GABRIEL THOMAZ GRACIANI</h2>
 				</div>
 
 				<ul className="menu">
