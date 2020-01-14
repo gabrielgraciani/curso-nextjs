@@ -2,7 +2,7 @@ import App from 'next/app';
 import Head from 'next/head';
 import Header from '../components/header';
 
-import "../styles/_index.scss";
+import "../styles/styles.css";
 
 class MovieApp extends App{
 
@@ -17,7 +17,7 @@ class MovieApp extends App{
 		const {Component, pageProps} = this.props;
 
 		return(
-			<div>
+			<div id="wrapper_body">
 				<Head>
 					<title>Home</title>
 					<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossOrigin="anonymous" />
@@ -28,7 +28,7 @@ class MovieApp extends App{
 
 				<Header />
 
-				<div className="base-page">
+				<div id="wrapper_components">
 					<Component {...pageProps} />
 				</div>
 
